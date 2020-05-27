@@ -1,8 +1,8 @@
 # About
 A fake shoes web store
 <br/><br/>
-<img src="https://raw.githubusercontent.com/DiegoVictor/rocketshoes-web/master/screenshots/dashboard.png" width="100%" />
-<img src="https://raw.githubusercontent.com/DiegoVictor/rocketshoes-web/master/screenshots/cart.png" width="100%" />
+![dashboard](https://raw.githubusercontent.com/DiegoVictor/rocketshoes/master/web/screenshots/dashboard.png)
+![cart](https://raw.githubusercontent.com/DiegoVictor/rocketshoes/master/web/screenshots/cart.png)
 
 # Install
 ```
