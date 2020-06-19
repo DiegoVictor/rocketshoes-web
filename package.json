@@ -36,12 +36,13 @@
       "^~/(.*)": "<rootDir>/src/$1"
     },
     "collectCoverageFrom": [
-      "!src/*.js",
-      "!src/services/*",
+      "!src/components/Layout/*.js",
       "!src/config/*",
-      "!src/components/pages/*.js",
+      "!src/routes/*",
+      "!src/services/*",
       "!src/store/*.js",
-      "!src/store/modules/*.js"
+      "!src/store/modules/*.js",
+      "!src/*.js"
     ],
     "coverageDirectory": "__tests__/coverage"
   },
