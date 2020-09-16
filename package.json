@@ -26,8 +26,9 @@
     "eject": "react-scripts eject"
   },
   "jest": {
+    "coverageDirectory": "tests/coverage",
     "testMatch": [
-      "**/__tests__/**/*.test.js"
+      "**/tests/**/*.spec.js"
     ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
@@ -36,15 +37,13 @@
       "^~/(.*)": "<rootDir>/src/$1"
     },
     "collectCoverageFrom": [
-      "!src/components/Layout/*.js",
-      "!src/config/*",
       "!src/routes/*",
       "!src/services/*",
       "!src/store/*.js",
       "!src/store/modules/*.js",
+      "!src/styles/*",
       "!src/*.js"
-    ],
-    "coverageDirectory": "__tests__/coverage"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"
