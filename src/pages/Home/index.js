@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { MdAddShoppingCart } from 'react-icons/md';
 
-import { ProductList } from './styles';
 import api from '~/services/api';
 import { formatPrice } from '~/util/format';
 import { addToCartRequest } from '~/store/modules/cart/actions';
+import { ProductList } from './styles';
 
 export default () => {
   const [products, setProducts] = useState([]);
