@@ -15,7 +15,7 @@ describe('Header component', () => {
     const { getByTestId } = render(
       <Router history={history}>
         <Header />
-      </Router>
+      </Router>,
     );
 
     fireEvent.click(getByTestId('home'));
@@ -28,7 +28,7 @@ describe('Header component', () => {
     const { getByTestId } = render(
       <Router history={history}>
         <Header />
-      </Router>
+      </Router>,
     );
 
     fireEvent.click(getByTestId('cart'));
