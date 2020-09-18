@@ -11,6 +11,11 @@ import { addToCartRequest } from '~/store/modules/cart/actions';
 import history from '~/services/history';
 
 jest.mock('react-redux');
+jest.mock('~/util/format', () => {
+  return {
+    formatPrice: value => `R$ ${value.toFixed(2)}`,
+  };
+});
 
 describe('Home page', () => {
   const apiMock = new MockAdapter(api);

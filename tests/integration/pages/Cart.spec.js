@@ -12,6 +12,11 @@ import {
 import history from '~/services/history';
 
 jest.mock('react-redux');
+jest.mock('~/util/format', () => {
+  return {
+    formatPrice: value => `R$ ${value.toFixed(2)}`,
+  };
+});
 
 describe('Cart page', () => {
   it('should be able to see an item on the cart', async () => {
