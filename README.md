@@ -1,37 +1,92 @@
-# About
-A fake shoes web store
-<br/><br/>
-![dashboard](https://raw.githubusercontent.com/DiegoVictor/rocketshoes/master/web/screenshots/dashboard.png)
-![cart](https://raw.githubusercontent.com/DiegoVictor/rocketshoes/master/web/screenshots/cart.png)
+# [Web] Rocketshoes
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/DiegoVictor/rocketshoes-web/CI?logo=github&style=flat-square)](https://github.com/DiegoVictor/rocketshoes-web/actions)
+[![react](https://img.shields.io/badge/reactjs-16.13.1-61dafb?style=flat-square&logo=react)](https://reactjs.org/)
+[![styled-components](https://img.shields.io/badge/styled_components-4.1.1-db7b86?style=flat-square&logo=styled-components)](https://styled-components.com/)
+[![eslint](https://img.shields.io/badge/eslint-5.16.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
+[![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
+[![jest](https://img.shields.io/badge/jest-24.7.1-brightgreen?style=flat-square&logo=jest)](https://jestjs.io/)
+[![coverage](https://img.shields.io/codecov/c/gh/DiegoVictor/rocketseat-web?logo=codecov&style=flat-square)](https://codecov.io/gh/DiegoVictor/rocketseat-web)
+[![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/DiegoVictor/rocketseat-web/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
 
-# Install
+This web application simulate a simple shoes store with cart system. All the resources used by this application comes from a fake [API](#api).
+
+## Table of Contents
+* [Screenshots](#screenshots)
+* [Installing](#installing)
+  * [Configuring](#configuring)
+    * [.env](#env)
+    * [API](#api)
+* [Usage](#usage)
+* [Running the tests](#running-the-tests)
+  * [Coverage Report](#coverage-report)
+
+# Screenshots
+Click to expand.<br>
+![dashboard](https://raw.githubusercontent.com/DiegoVictor/rocketshoes-web/master/screenshots/dashboard.png)
+![cart](https://raw.githubusercontent.com/DiegoVictor/rocketshoes-web/master/screenshots/cart.png)
+
+# Installing
+Easy peasy lemon squeezy:
 ```
 $ yarn
 ```
+Or:
+```
+$ npm install
+```
+> Was installed and configured the [`eslint`](https://eslint.org/) and [`prettier`](https://prettier.io/) to keep the code clean and patterned.
 
-# Dependencies
-Was installed and configured the `eslint` and `prettier` to keep the code clean and patterned.
+## Configuring
+Configure your environment variables and remember to start the [Json Server](https://github.com/typicode/json-server) API before to start this app.
 
-# Reactotron
-This project is configured with [Reactotron](https://github.com/infinitered/reactotron), just open the Reactotron GUI before the app is up and running, after start the app Reactotron will identify new connections.
+### .env
+In this file you may configure the API's url. Rename the `.env.example` in the root directory to `.env` then just update with your settings.
 
-# .env
-Rename the `.env.example` to `.env` then just update with yours settings.
+key|description|default
+---|---|---
+REACT_APP_API_URL|API's url|`http://localhost:3333`
 
-# API
-Start the server the fake server:
+### API
+This application make usage of a third party library to create a fake API, you can see more information about it in [JSON Server](https://github.com/typicode/json-server) repository.
+
+To start the API run:
 ```
 $ yarn json-server server.json -p 3333
 ```
-> If any change in the fake api's port (the `-p` option) was made remember to update the `.env` too.
+Or:
+```
+$ npx json-server server.json -p 3333
+```
+> Remember to update the `.env` if you choose another `port` or `host`
 
-# Start up
+# Usage
+To start the app run:
 ```
 $ yarn start
 ```
+Or:
+```
+npm run start
+```
 
-# Tests
+# Running the tests
+[Jest](https://jestjs.io) was the choice to test the app, to run:
 ```
 $ yarn test
 ```
-> And `yarn coverage` to run tests with coverage
+Or:
+```
+$ npm run test
+```
+
+## Coverage Report
+To generate/update the coverage report:
+```
+$ yarn coverage
+```
+Or:
+```
+$ npm run coverage
+```
+> You can see the coverage report inside `tests/coverage`.
