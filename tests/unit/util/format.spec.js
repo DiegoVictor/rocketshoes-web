@@ -7,6 +7,11 @@ describe('Format', () => {
     const price = faker.finance.amount();
     const formated = formatPrice(price);
 
-    expect(formated).toBe(`R$\xa0${price}`);
+    const { format } = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+
+    expect(formated).toMatch(format(price));
   });
 });
