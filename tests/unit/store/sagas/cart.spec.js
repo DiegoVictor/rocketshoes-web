@@ -15,6 +15,11 @@ import factory from '../../../utils/factory';
 
 jest.mock('react-toastify');
 jest.mock('redux-saga/effects');
+jest.mock('~/util/format', () => {
+  return {
+    formatPrice: value => `R$ ${value.toFixed(2)}`,
+  };
+});
 
 describe('Cart saga', () => {
   it('should be able update item amount', async () => {
@@ -98,7 +103,7 @@ describe('Cart saga', () => {
       addToCartSuccess({
         ...product,
         amount: 1,
-        priceFormatted: `R$\xa0${product.price.toFixed(2)}`,
+        priceFormatted: `R$ ${product.price.toFixed(2)}`,
       }),
     );
     expect(history.push).toHaveBeenCalledWith('/cart');
