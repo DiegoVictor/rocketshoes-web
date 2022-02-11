@@ -15,7 +15,7 @@ export default () => {
       <Theme />
       <ToastContainer autoClose={3000} />
 
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Header />
         <Routes />
       </Router>
