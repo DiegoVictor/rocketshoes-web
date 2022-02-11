@@ -47,7 +47,6 @@
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.4.0",
     "axios-mock-adapter": "^1.17.0",
-    "babel-plugin-root-import": "^6.4.1",
     "customize-cra": "^1.0.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
