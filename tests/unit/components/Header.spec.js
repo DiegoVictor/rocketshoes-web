@@ -13,7 +13,7 @@ describe('Header component', () => {
     useSelector.mockImplementation(cd => cd({ cart: [] }));
 
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Header />
       </Router>,
     );
@@ -26,7 +26,7 @@ describe('Header component', () => {
     useSelector.mockImplementation(cd => cd({ cart: [] }));
 
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Header />
       </Router>,
     );

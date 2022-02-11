@@ -30,7 +30,7 @@ describe('Cart page', () => {
       }),
     );
     const { getByTestId, getByAltText, getByText } = render(
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Cart />
       </Router>,
     );
@@ -59,7 +59,7 @@ describe('Cart page', () => {
       }),
     );
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Cart />
       </Router>,
     );
@@ -80,7 +80,7 @@ describe('Cart page', () => {
       }),
     );
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Cart />
       </Router>,
     );
@@ -103,7 +103,7 @@ describe('Cart page', () => {
       }),
     );
     const { getByTestId } = render(
-      <Router history={history}>
+      <Router location={history.location} navigator={history}>
         <Cart />
       </Router>,
     );

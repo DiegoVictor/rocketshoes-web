@@ -25,9 +25,9 @@ describe('Cart saga', () => {
   it('should be able update item amount', async () => {
     const dispatch = jest.fn();
     const product = await factory.attrs('Product', {
-      amount: faker.random.number({ min: 1 }),
+      amount: faker.datatype.number({ min: 1 }),
     });
-    const amount = faker.random.number({ min: 1, max: product.amount });
+    const amount = faker.datatype.number({ min: 1, max: product.amount });
 
     call.mockImplementation(() => ({ data: product }));
 
@@ -43,7 +43,7 @@ describe('Cart saga', () => {
   it('should not be able update item amount with an invalid amount', async () => {
     const dispatch = jest.fn();
     const product = await factory.attrs('Product');
-    const amount = faker.random.number({ max: -1 });
+    const amount = faker.datatype.number({ max: -1 });
 
     put.mockClear();
 
@@ -63,7 +63,7 @@ describe('Cart saga', () => {
     toast.error = jest.fn();
 
     const product = await factory.attrs('Product');
-    const amount = faker.random.number({ min: product.amount });
+    const amount = faker.datatype.number({ min: product.amount });
 
     call.mockImplementation(() => ({ data: product }));
 
@@ -112,10 +112,10 @@ describe('Cart saga', () => {
   it('should be able to increase item amount', async () => {
     const dispatch = jest.fn();
     const stock = await factory.attrs('Product', {
-      amount: faker.random.number({ min: 5 }),
+      amount: faker.datatype.number({ min: 5 }),
     });
     const product = await factory.attrs('Product', {
-      amount: faker.random.number({ min: 1, max: stock.amount - 1 }),
+      amount: faker.datatype.number({ min: 1, max: stock.amount - 1 }),
     });
 
     select.mockImplementation(cb => cb({ cart: [product] }));
@@ -141,7 +141,7 @@ describe('Cart saga', () => {
     const dispatch = jest.fn();
     const stock = await factory.attrs('Product');
     const product = await factory.attrs('Product', {
-      amount: faker.random.number({ min: stock.amount }),
+      amount: faker.datatype.number({ min: stock.amount }),
     });
 
     select.mockImplementation(cb => cb({ cart: [product] }));

@@ -24,7 +24,7 @@ describe('Cart reducer', () => {
     const product = await factory.attrs('Product');
     const state = reducer(
       [product],
-      removeFromCart(faker.random.number({ min: product.id + 1 })),
+      removeFromCart(faker.datatype.number({ min: product.id + 1 })),
     );
     expect(state).toHaveLength(1);
   });
@@ -37,18 +37,18 @@ describe('Cart reducer', () => {
 
   it('UPDATE_AMOUNT_SUCCESS', async () => {
     const product = await factory.attrs('Product');
-    const amount = faker.random.number({ min: product.amount });
+    const amount = faker.datatype.number({ min: product.amount });
 
     const state = reducer(
       [product],
-      updateAmountSuccess(faker.random.number({ min: product.id + 1 }), amount),
+      updateAmountSuccess(faker.datatype.number({ min: product.id + 1 }), amount),
     );
     expect(state).toContainEqual(product);
   });
 
   it('UPDATE_AMOUNT_SUCCESS', async () => {
     const product = await factory.attrs('Product');
-    const amount = faker.random.number({ min: product.amount });
+    const amount = faker.datatype.number({ min: product.amount });
 
     const state = reducer([product], updateAmountSuccess(product.id, amount));
     expect(state).toContainEqual({

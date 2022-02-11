@@ -38,7 +38,7 @@ describe('Home page', () => {
     let getByText;
     await act(async () => {
       const component = render(
-        <Router history={history}>
+        <Router location={history.location} navigator={history}>
           <Home />
         </Router>,
       );
@@ -72,7 +72,7 @@ describe('Home page', () => {
     let getByTestId;
     await act(async () => {
       const component = render(
-        <Router history={history}>
+        <Router location={history.location} navigator={history}>
           <Home />
         </Router>,
       );
