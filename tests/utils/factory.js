@@ -5,11 +5,11 @@ factory.define(
   'Product',
   {},
   {
-    id: faker.random.number,
+    id: faker.datatype.number,
     title: faker.name.title,
     image: faker.image.imageUrl,
-    amount: () => faker.random.number({ min: 2, max: 5 }),
-    price: () => faker.random.number(100),
+    amount: () => faker.datatype.number({ min: 2, max: 5 }),
+    price: () => faker.datatype.number(100),
   },
 );
 
