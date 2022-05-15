@@ -1,4 +1,4 @@
-import faker from 'faker';
+import faker from '@faker-js/faker';
 
 import reducer, { initial_state } from '~/store/modules/cart/reducer';
 import {
@@ -41,7 +41,10 @@ describe('Cart reducer', () => {
 
     const state = reducer(
       [product],
-      updateAmountSuccess(faker.datatype.number({ min: product.id + 1 }), amount),
+      updateAmountSuccess(
+        faker.datatype.number({ min: product.id + 1 }),
+        amount,
+      ),
     );
     expect(state).toContainEqual(product);
   });

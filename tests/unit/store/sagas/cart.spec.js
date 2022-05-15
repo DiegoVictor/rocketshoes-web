@@ -1,7 +1,7 @@
 import { runSaga } from 'redux-saga';
 import { toast } from 'react-toastify';
 import { call, select, put } from 'redux-saga/effects';
-import faker from 'faker';
+import faker from '@faker-js/faker';
 
 import { updateAmount, addToCart } from '~/store/modules/cart/sagas';
 import {
@@ -43,7 +43,7 @@ describe('Cart saga', () => {
   it('should not be able update item amount with an invalid amount', async () => {
     const dispatch = jest.fn();
     const product = await factory.attrs('Product');
-    const amount = faker.datatype.number({ max: -1 });
+    const amount = -1;
 
     put.mockClear();
 
@@ -145,7 +145,7 @@ describe('Cart saga', () => {
     });
 
     select.mockImplementation(cb => cb({ cart: [product] }));
-    call.mockImplementation((cb, uri) => {
+    call.mockImplementation((_, uri) => {
       if (uri === `/stock/${product.id}`) {
         return { data: stock };
       }
