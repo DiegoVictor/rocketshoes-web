@@ -1,9 +1,9 @@
-name: CI
+name: Pipeline
 on:
   push:
     branches: [ master ]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     env:
       REACT_APP_API_URL: 'http://localhost:3333'
